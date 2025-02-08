@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./colors.scss";
-@import "./polonto.css";
+@import './colors.scss';
+@import './polonto.css';
 
 body,
 html {
@@ -378,15 +378,9 @@ html {
 .fill-text-textColor {
   -webkit-text-fill-color: white !important;
 }
-div div .set-font-family {
-  font-family: "Helvetica Neue", Helvetica !important;
-  font-stretch: 100% !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-}
 
 .col-calendar:hover:before {
-  content: "Date passed";
+  content: 'Date passed';
   color: white;
   position: absolute;
   left: 50%;
@@ -397,22 +391,22 @@ div div .set-font-family {
 }
 
 .loading-shimmer {
-    position: relative;
-    color: rgba(255, 255, 255, .5);
+  position: relative;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .loading-shimmer:before {
-    content: attr(data-text);
-    position: absolute;
-    overflow: hidden;
-    max-width: 100%;
-    white-space: nowrap;
-    color: white;
-    animation: loading 4s linear 0s infinite;
-    filter: blur(0.4px);
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  max-width: 100%;
+  white-space: nowrap;
+  color: white;
+  animation: loading 4s linear 0s infinite;
+  filter: blur(0.4px);
 }
 @keyframes loading {
-    0% {
-        max-width: 0;
-    }
+  0% {
+    max-width: 0;
+  }
 }

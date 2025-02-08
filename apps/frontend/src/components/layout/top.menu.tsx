@@ -43,25 +43,6 @@ export const useMenuItems = () => {
           },
         ]
       : []),
-    {
-      name: 'Plugs',
-      icon: 'plugs',
-      path: '/plugs',
-    },
-    {
-      name: 'Billing',
-      icon: 'billing',
-      path: '/billing',
-      role: ['ADMIN', 'SUPERADMIN'],
-      requireBilling: true,
-    },
-    {
-      name: 'Affiliate',
-      icon: 'affiliate',
-      path: 'https://affiliate.postiz.com',
-      role: ['ADMIN', 'SUPERADMIN', 'USER'],
-      requireBilling: true,
-    },
   ];
 };
 
@@ -76,7 +57,8 @@ export const TopMenu: FC = () => {
       <ul className="gap-0 md:gap-5 flex flex-1 items-center text-[18px]">
         {menuItems
           .filter((f) => {
-            if (f.requireBilling && !billingEnabled) {
+            // @ts-ignore
+            if (f?.requireBilling && !billingEnabled) {
               return false;
             }
             if (f.name === 'Billing' && user?.isLifetime) {

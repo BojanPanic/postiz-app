@@ -28,7 +28,7 @@ import { TelegramProvider } from '@gitroom/nestjs-libraries/integrations/social/
 import { NostrProvider } from '@gitroom/nestjs-libraries/integrations/social/nostr.provider';
 
 const socialIntegrationList: SocialProvider[] = [
-  new XProvider(),
+  /*   new XProvider(),
   new LinkedinProvider(),
   new LinkedinPageProvider(),
   new RedditProvider(),
@@ -42,12 +42,12 @@ const socialIntegrationList: SocialProvider[] = [
   new DribbbleProvider(),
   new DiscordProvider(),
   new SlackProvider(),
-  new MastodonProvider(),
+  new MastodonProvider(), */
   new BlueskyProvider(),
-  new LemmyProvider(),
+  /*   new LemmyProvider(),
   new FarcasterProvider(),
   new TelegramProvider(),
-  new NostrProvider(),
+  new NostrProvider(), */
   // new MastodonCustomProvider(),
 ];
 
