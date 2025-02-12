@@ -514,17 +514,6 @@ export const AddEditModal: FC<{
 
   return (
     <>
-      {user?.tier?.ai && (
-        <CopilotPopup
-          hitEscapeToClose={false}
-          clickOutsideToClose={true}
-          labels={{
-            title: 'AI Content Assistant',
-          }}
-          className="!z-[499]"
-          instructions="You are an assistant that help the user to schedule their social media posts, everytime somebody write something, try to use a function call, if not prompt the user that the request is invalid and you are here to assists with social media posts"
-        />
-      )}
       <div
         id="add-edit-modal"
         className={clsx(

@@ -36,7 +36,7 @@ export const NewPost = () => {
   return (
     <button
       onClick={createAPost}
-      className="p-[8px] rounded-md bg-green-900 flex justify-center items-center gap-[5px] outline-none text-white"
+      className="p-[8px] rounded-md bg-slate-700 hover:bg-slate-800  flex justify-center items-center gap-[5px] outline-none text-white"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

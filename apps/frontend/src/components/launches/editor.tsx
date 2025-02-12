@@ -102,7 +102,7 @@ export const Editor = forwardRef<
             autosuggestionsConfig={{
               textareaPurpose: `Assist me in writing social media posts.`,
               chatApiConfigs: {},
-              disabled: !user?.tier?.ai,
+              disabled: true,
             }}
           />
         </div>

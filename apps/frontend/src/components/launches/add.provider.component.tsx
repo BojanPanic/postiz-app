@@ -40,7 +40,7 @@ export const AddProviderButton: FC<{ update?: () => void }> = (props) => {
   const add = useAddProvider(update);
   return (
     <button
-      className="text-white p-[8px] rounded-md bg-forth flex gap-[5px]"
+      className="text-white p-[8px] rounded-md bg-forth hover:bg-forth-hover flex gap-[5px]"
       onClick={add}
     >
       <div>
@@ -208,6 +208,8 @@ export const CustomVariables: FC<{
     defaultValue?: string;
     validation: string;
     type: 'text' | 'password';
+    description?: string;
+    placeholder?: string;
   }>;
   close?: () => void;
   identifier: string;
@@ -255,7 +257,7 @@ export const CustomVariables: FC<{
     },
     [variables]
   );
-
+  console.log(variables);
   return (
     <div className="rounded-[4px] border border-customColor6 bg-sixth px-[16px] pb-[16px] relative">
       <TopTitle title={`Custom URL`} />
@@ -290,6 +292,8 @@ export const CustomVariables: FC<{
                 label={variable.label}
                 name={variable.key}
                 type={variable.type == 'text' ? 'text' : 'password'}
+                description={variable?.description}
+                placeholder={variable?.placeholder}
               />
             </div>
           ))}
@@ -314,6 +318,8 @@ export const AddProviderComponent: FC<{
       label: string;
       validation: string;
       type: 'text' | 'password';
+      description?: string;
+      placeholder?: string;
     }>;
   }>;
   article: Array<{ identifier: string; name: string }>;

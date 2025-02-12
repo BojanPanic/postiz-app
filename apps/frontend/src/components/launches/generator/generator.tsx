@@ -268,19 +268,6 @@ export const GeneratorComponent = () => {
   const all = useCalendar();
 
   const generate = useCallback(async () => {
-    if (!user?.tier?.ai) {
-      if (
-        await deleteDialog(
-          'You need to upgrade to use this feature',
-          'Move to billing',
-          'Payment Required'
-        )
-      ) {
-        router.push('/billing');
-      }
-      return;
-    }
-
     modal.openModal({
       title: '',
       withCloseButton: false,

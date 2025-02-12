@@ -439,9 +439,6 @@ export const LaunchesComponent = () => {
                 <div className="flex flex-col gap-[10px]">
                   <AddProviderButton update={() => update(true)} />
                   {sortedIntegrations?.length > 0 && <NewPost />}
-                  {sortedIntegrations?.length > 0 &&
-                    user?.tier?.ai &&
-                    billingEnabled && <GeneratorComponent />}
                 </div>
               </div>
               <div className="flex-1 flex flex-col gap-[14px]">

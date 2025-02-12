@@ -6,7 +6,9 @@ import {
 } from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
 import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
 import {
-  NotEnoughScopes, RefreshToken, SocialAbstract
+  NotEnoughScopes,
+  RefreshToken,
+  SocialAbstract,
 } from '@gitroom/nestjs-libraries/integrations/social.abstract';
 import { BskyAgent, RichText } from '@atproto/api';
 import dayjs from 'dayjs';
@@ -60,20 +62,23 @@ export class BlueskyProvider extends SocialAbstract implements SocialProvider {
     return [
       {
         key: 'service',
-        label: 'Service',
+        label: 'Hosting provider',
         defaultValue: 'https://bsky.social',
         validation: `/^(https?:\\/\\/)?((([a-zA-Z0-9\\-_]{1,256}\\.[a-zA-Z]{2,6})|(([0-9]{1,3}\\.){3}[0-9]{1,3}))(:[0-9]{1,5})?)(\\/[^\\s]*)?$/`,
         type: 'text' as const,
       },
       {
         key: 'identifier',
-        label: 'Identifier',
+        label: 'Account',
+        description: 'Bluesky handle (e.g., accountname.bsky.social)',
         validation: `/^.+$/`,
         type: 'text' as const,
       },
       {
         key: 'password',
-        label: 'Password',
+        label: 'App Password',
+        description:
+          'Use an app password to connect safely without giving full access to your account. This is not your account password. <a href="https://bsky.app/settings/app-passwords" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline font-medium">Generate app password in Bluesky</a>',
         validation: `/^.{3,}$/`,
         type: 'password' as const,
       },
