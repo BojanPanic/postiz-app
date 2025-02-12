@@ -1,7 +1,12 @@
 'use client';
 
 import {
-  DetailedHTMLProps, FC, InputHTMLAttributes, ReactNode, useEffect, useMemo
+  DetailedHTMLProps,
+  FC,
+  InputHTMLAttributes,
+  ReactNode,
+  useEffect,
+  useMemo,
 } from 'react';
 import { clsx } from 'clsx';
 import { useFormContext, useWatch } from 'react-hook-form';
@@ -14,6 +19,7 @@ export const Input: FC<
     disableForm?: boolean;
     customUpdate?: () => void;
     label: string;
+    description?: string;
     name: string;
     icon?: ReactNode;
   }
@@ -26,6 +32,8 @@ export const Input: FC<
     className,
     disableForm,
     error,
+    description,
+    placeholder,
     ...rest
   } = props;
   const form = useFormContext();
@@ -44,7 +52,7 @@ export const Input: FC<
 
   return (
     <div className="flex flex-col gap-[6px]">
-      {!!label && (<div className={`${interClass} text-[14px]`}>{label}</div>)}
+      {!!label && <div className={`${interClass} text-[14px]`}>{label}</div>}
       <div
         className={clsx(
           'bg-input h-[44px] border-fifth border rounded-[4px] text-inputText placeholder-inputText flex items-center justify-center',
@@ -59,8 +67,15 @@ export const Input: FC<
           )}
           {...(disableForm ? {} : form.register(props.name))}
           {...rest}
+          placeholder={placeholder || ''}
         />
       </div>
+      {!!description && (
+        <div
+          className="text-inputText text-[12px]"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+      )}
       {!removeError && (
         <div className="text-red-400 text-[12px]">{err || <>&nbsp;</>}</div>
       )}

@@ -76,7 +76,9 @@ export const Pagination: FC<{
             onClick={() => setPage(page)}
             className={clsx(
               'cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border hover:bg-forth h-10 w-10 hover:text-white border-[#1F1F1F]',
-              current === page ? 'bg-forth !text-white' : 'text-textColor hover:text-white'
+              current === page
+                ? 'bg-forth !text-white'
+                : 'text-textColor hover:text-white'
             )}
           >
             {page + 1}
@@ -559,10 +561,6 @@ export const MultiMediaComponent: FC<{
                 </div>
               </div>
             </Button>
-
-            {!!user?.tier?.ai && (
-              <AiImage value={text} onChange={changeMedia} />
-            )}
           </div>
 
           {!!currentMedia &&

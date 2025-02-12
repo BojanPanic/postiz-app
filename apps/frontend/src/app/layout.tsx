@@ -15,8 +15,12 @@ import { PHProvider } from '@gitroom/react/helpers/posthog';
 import UtmSaver from '@gitroom/helpers/utils/utm.saver';
 import { ToltScript } from '@gitroom/frontend/components/layout/tolt.script';
 import { FacebookComponent } from '@gitroom/frontend/components/layout/facebook.component';
+import { Roboto } from 'next/font/google';
 
-const chakra = Chakra_Petch({ weight: '400', subsets: ['latin'] });
+const roboto = Roboto({
+  weight: ['400', '700'], // Load specific weights you need
+  subsets: ['latin'], // Load specific character sets
+});
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const Plausible = !!process.env.STRIPE_PUBLISHABLE_KEY
@@ -24,11 +28,11 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
     : Fragment;
 
   return (
-    <html className={interClass}>
+    <html className={roboto.className}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={clsx(chakra.className, 'text-primary dark')}>
+      <body className={'text-primary light'}>
         <VariableContextComponent
           storageProvider={
             process.env.STORAGE_PROVIDER! as 'local' | 'cloudflare'

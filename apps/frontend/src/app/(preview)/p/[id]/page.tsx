@@ -42,6 +42,7 @@ export default async function Auth({
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <div className="min-w-[55px]">
+                test
                 <Link
                   href="/"
                   className="text-2xl flex items-center justify-center gap-[10px] text-textColor order-1"
@@ -148,7 +149,11 @@ export default async function Auth({
                             key={p.name}
                             className="flex-1 rounded-[10px] max-h-[500px] overflow-hidden"
                           >
-                            <VideoOrImage isContain={true} src={p.path} autoplay={true} />
+                            <VideoOrImage
+                              isContain={true}
+                              src={p.path}
+                              autoplay={true}
+                            />
                           </div>
                         ))}
                       </div>

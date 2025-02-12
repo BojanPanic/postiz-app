@@ -43,32 +43,6 @@ export const useMenuItems = () => {
           },
         ]
       : []),
-    {
-      name: 'Plugs',
-      icon: 'plugs',
-      path: '/plugs',
-    },
-    {
-      name: 'Billing',
-      icon: 'billing',
-      path: '/billing',
-      role: ['ADMIN', 'SUPERADMIN'],
-      requireBilling: true,
-    },
-    {
-      name: 'Settings',
-      icon: 'settings',
-      path: '/settings',
-      role: ['ADMIN', 'SUPERADMIN'],
-      hide: true,
-    },
-    {
-      name: 'Affiliate',
-      icon: 'affiliate',
-      path: 'https://affiliate.postiz.com',
-      role: ['ADMIN', 'SUPERADMIN', 'USER'],
-      requireBilling: true,
-    },
   ];
 };
 

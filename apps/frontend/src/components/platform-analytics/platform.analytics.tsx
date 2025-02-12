@@ -21,6 +21,7 @@ const allowedIntegrations = [
   'youtube',
   'pinterest',
   'threads',
+  'bluesky',
 ];
 
 export const PlatformAnalytics = () => {
@@ -64,6 +65,7 @@ export const PlatformAnalytics = () => {
         'pinterest',
         'youtube',
         'threads',
+        'bluesky',
       ].indexOf(currentIntegration.identifier) !== -1
     ) {
       arr.push({
@@ -80,6 +82,7 @@ export const PlatformAnalytics = () => {
         'pinterest',
         'youtube',
         'threads',
+        'bluesky',
       ].indexOf(currentIntegration.identifier) !== -1
     ) {
       arr.push({
@@ -89,7 +92,7 @@ export const PlatformAnalytics = () => {
     }
 
     if (
-      ['facebook', 'linkedin-page', 'pinterest', 'youtube'].indexOf(
+      ['facebook', 'linkedin-page', 'pinterest', 'youtube', 'bluesky'].indexOf(
         currentIntegration.identifier
       ) !== -1
     ) {
@@ -140,7 +143,7 @@ export const PlatformAnalytics = () => {
 
   return (
     <div className="flex gap-[30px] flex-1">
-      <div className="p-[16px] bg-customColor48 overflow-hidden flex w-[220px]">
+      <div className="p-[16px] bg-primary overflow-hidden flex w-[220px]">
         <div className="flex gap-[16px] flex-col overflow-hidden">
           <div className="text-[20px] mb-[8px]">Channels</div>
           {sortedIntegrations.map((integration, index) => (
@@ -148,8 +151,11 @@ export const PlatformAnalytics = () => {
               key={integration.id}
               onClick={() => {
                 if (integration.refreshNeeded) {
-                  toaster.show('Please refresh the integration from the calendar', 'warning');
-                  return ;
+                  toaster.show(
+                    'Please refresh the integration from the calendar',
+                    'warning'
+                  );
+                  return;
                 }
                 setRefresh(true);
                 setTimeout(() => {
